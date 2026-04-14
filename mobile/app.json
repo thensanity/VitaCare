@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "VitaCare",
+    "slug": "vitacare",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "vitacare",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.POST_NOTIFICATIONS"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-av",
+        {
+          "microphonePermission": "VitaCare uses the microphone so you can speak to the wellness assistant."
+        }
+      ],
+      [
+        "@kayzmann/expo-healthkit",
+        {
+          "healthShareUsageDescription": "VitaCare reads steps, heart rate, blood oxygen, and sleep from Apple Health so data recorded by Apple Watch or iPhone can support elderly monitoring. VitaCare never diagnoses.",
+          "healthUpdateUsageDescription": "VitaCare may write water or workouts to Apple Health if you use those features in the future."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#0d9488",
+          "sounds": []
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "apiUrl": "http://127.0.0.1:3001"
+    }
+  }
+}
